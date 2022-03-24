@@ -83,3 +83,100 @@ m[2:3, 2:4]
 
 #linhas 1 a 3, colunas 2 e 4
 m[1:3, c(2, 4)]
+#############################################
+#produz uma lista com quatro elementos nomeados
+#eles podem ser acessados assim:
+#x$nome
+x <- list (
+    foo = 1:4,
+    bar = 0.6,
+    msg = c('hello', "world"),
+    quiz = list(5, 7, 3)
+)
+
+x$foo
+x$bar
+x$msg
+x$quiz
+
+
+#dá um vetor contendo o primeiro elemento de quiz
+x$quiz[1]
+
+#dá o primeiro elemento do vetor contendo o primeiro elemento de quiz
+x$quiz[[1]]
+
+#mostra foo: 1 2 3 4
+x[1]
+
+#mostra: 1 2 3 4
+x[[1]]
+
+#$bar: 0.6
+x$bar
+
+#$bar: 0.6
+x["bar"]
+
+#0.6
+x[["bar"]]
+
+#$foo: 1 2 3 4 $msg: hello world
+x[c(1,3)]
+
+#$quiz[[1]]: 5
+#$quiz[[2]]: 7
+#$quiz[[3]]: 3
+x[4]
+
+#[[1]]: 5
+#[[2]]: 7
+#[[3]]: 3
+x[[4]]
+
+#[[1]]: 7
+x[[4]][2]
+#7
+x[[4]][[2]]
+
+x
+#world
+x[[c(3, 2)]]
+
+#NULL
+x$name
+
+#abreviação (primeiras letras)
+#hello world
+x$m
+#hello world
+x$ms
+
+#1 2 3 4
+x$f
+
+#0.6
+x$ba
+
+#adicionando nova propriedade para mostrar ambiguidade no nome: foo e fruta começam com f
+x <- c(x, list (fruta = "limão"))
+x
+
+#NULL
+x$f
+
+#limão
+x$fr
+
+#1 2 3 4
+x$fo
+
+#NULL (ambiguo)
+x[["f"]]
+
+#NULL, nao existe se a procura for exata
+x[["fr"]]
+
+#admite busca nao exata
+x[["fr", exact = F]]
+
