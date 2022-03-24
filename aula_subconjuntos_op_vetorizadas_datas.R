@@ -46,8 +46,18 @@ n <- 1:10; n
 #vetor de 0s e 1s, de acordo com a paridade de cada elemento em r
 r <- n %% 2; r;
 
-#vetor de booleanos
+#vetor de booleanos, TRUE quando igual a zero
 p <- (r == 0); p
 
+#vetor de pares
+pares <- n[p];
+pares;
 
+#vetor de booleanos, TRUE quando igual a 1
+i <- (n %% 2 == 1)
+i
+#vetor de impares
+impares <- n[i];
+impares
+#################################
 
