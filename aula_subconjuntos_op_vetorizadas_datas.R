@@ -60,4 +60,26 @@ i
 impares <- n[i];
 impares
 #################################
+#de cima para baixo, da esquerda para a direita
+m <- matrix(nrow = 3, ncol = 4, data = 1:12);
+m;
+#linha 2 coluna 2
+m[2,2]
 
+#linha 1, coluna 3
+m[1, 3]
+
+#segunda linha
+m[2, ]
+
+#terceira coluna
+m[,3]
+
+#terceira coluna, não descartar (drop) a estrutura, mantendo o objeto como uma matriz
+m[, 3, drop = FALSE]
+m
+#linhas 2 e 3, colunas 2 a 4
+m[2:3, 2:4]
+
+#linhas 1 a 3, colunas 2 e 4
+m[1:3, c(2, 4)]
