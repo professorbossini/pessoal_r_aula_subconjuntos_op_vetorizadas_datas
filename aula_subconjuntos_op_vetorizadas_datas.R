@@ -180,3 +180,27 @@ x[["fr"]]
 #admite busca nao exata
 x[["fr", exact = F]]
 
+#colunas foo e bar
+d <- data.frame (foo = 6.8, bar = c(T, F, T))
+d
+
+#abreviação
+d$f
+
+#não funciona se não especificar busca não exata explicitamente
+#NULL
+d[["b"]]
+
+#Busca não exata
+#TRUE FALSE TRUE
+d[["bar", exact = F]]
+
+#foo bar
+names(d)
+
+#adiciona uma coluna ao dataframe chamada quiz
+d$quiz <- c ("cat", "dog", "rat")
+d
+#troca o nome da coluna foo para tmp
+names(d)[names(d) == "foo"] <- "tmp"
+d
