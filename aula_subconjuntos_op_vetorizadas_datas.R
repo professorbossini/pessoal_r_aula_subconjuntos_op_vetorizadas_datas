@@ -307,5 +307,15 @@ b || (teste > 0)
 # e para concluir o && precisa olhar do outro lado
 b && (teste > 0)
 
+x <- c(T, F, NA)
+names (x) <- c("TRUE", "FALSE", "NA"); x
 
+#matriz mostrando todas as combinações
+outer(x, x, "&")
 
+outer (x, x, "|")
+
+!x
+outer (x, x, "==")
+NA == NA
+!NA
