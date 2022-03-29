@@ -204,3 +204,108 @@ d
 #troca o nome da coluna foo para tmp
 names(d)[names(d) == "foo"] <- "tmp"
 d
+
+
+#os operandos das operações mencionadas são vetores
+3 + 4
+a <- 1:5;a
+a + 10
+a - 3
+3 * a
+a / 4
+4 / a
+a
+a ^ 2
+2 ** a
+2 ^ a
+a %% 4
+a %/% 4
+a %/% 2
+3 > 4
+a
+a > 4
+a != 3
+ 1 < a
+a 
+a == 2
+a >= 0
+(a ^ 2) > 10
+#T, T, T, F, F
+a < 4
+
+#T é tratatdo com 1
+#F é tratado como zero
+#2, 2, 2, 1, 1
+2 ^ (a < 4)
+
+2 ^ F
+2 ^ T
+4 ^ T
+a ^ T
+
+b <- c (T, F, F, T, F, T, F); b
+c <- c(F, F, T, T, T, F, F); c
+
+#ou sem curto circuito
+#vai mostrar um resultado para cada elemento do vetor
+b | c
+#e sem curto circuito
+b & c
+
+#e se vetores tiverem tamanhos diferentes?
+#se o maior for multiplo do menor, o menor vai sendo reaplicado
+c(T, F) & c(T, T, T, F)
+
+#se nao for multiplo da erro
+#erro
+c (T, F) & c (T, F, T)
+
+!b
+
+#observe como a versão curto circuito olha apenas para o primeiro elemento dos vetores
+#true
+c (T) && c (T)
+#false
+c(T) && c(F)
+#true
+c(T) || c(T)
+#true
+c(T) || c(F)
+#false
+c(F) || c(F)
+
+#true
+c(T, T) && c(T, T)
+#true
+c(T, F) && c(T, T)
+
+#true
+c(T, F) || c(T, F)
+
+#false
+c(F, T) || c(F, T)
+
+b
+c
+#False (olha só para o primeiro, lembre-se)
+b && c
+
+#true
+b || c
+
+#true
+#pouco importa o tamanho, portanto
+c(T, F) && c (T, T, T)
+
+#OBS: Dado o funcionamento dos operadores || e &&, a documentação sugere que sejam usados em estruturas de seleção ou repetição
+
+#teste nem existe. Mas tudo bem, pq o lado direito sequer é avaliado
+#já que o primeiro elemento de b é TRUE
+b || (teste > 0)
+
+#agora sim dá erro, já que o primeiro elemento de b é true
+# e para concluir o && precisa olhar do outro lado
+b && (teste > 0)
+
+
+
