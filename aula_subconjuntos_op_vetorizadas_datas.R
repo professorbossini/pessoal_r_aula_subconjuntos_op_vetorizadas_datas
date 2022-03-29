@@ -375,3 +375,56 @@ x * y
 
 x %*% y
 ###############################
+#data
+nascimento <- as.Date("1990-06-15")
+nascimento;
+
+hoje <- Sys.Date()
+hoje
+#diferença entre datas em dias
+hoje - nascimento
+#diferença entre datas em dias
+#2020 foi bissexto
+hoje - as.Date("2020-02-29")
+#erro, 2022 não é bissexto
+hoje - as.Date("2022-02-29")
+#resultado negativo se data futura
+hoje - as.Date("2030-01-01")
+
+#data ok
+#horario sem minutos (para nos, deslocado de -3 horas em relacao a UTC)
+agora <- as.POSIXct(Sys.Date())
+
+#data e hora ok, incluindo hora, minutos e segundos
+agora <- as.POSIXct(Sys.time())
+agora
+#soma segundos
+agora + 3600
+#dia da  semana de hoje
+weekdays(agora)
+
+#para ver propriedades
+agora <- as.POSIXlt(Sys.time())
+agora
+agora$sec
+agora$min
+agora$hour
+agora$mday
+agora$mon
+agora$year
+agora$wday
+agora$yday
+#daylight saving time: horario de verao
+agora$isdst
+#deslocamento em relação a UTC (o nosso é -3) Veja https://time.is/UTC
+agora$zone
+
+#deslocamento em relação a GMT em segundos
+#GMT é sempre igual a UTC
+#GMT é um "timezone"
+#UTC é apenas um padrão que serve de base para timezones. GMT é igual a UTC deslocado de zero
+#nenhuma região tem UTC como seu timezone padrão
+#quando seu timezone é igual a UTC deslocado de zero, seu timezone é GMT
+agora$gmtoff
+
+
