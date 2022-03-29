@@ -221,9 +221,11 @@ a ^ 2
 a %% 4
 a %/% 4
 a %/% 2
+##################################
 3 > 4
 a
 a > 4
+#############################3
 a != 3
  1 < a
 a 
@@ -243,6 +245,7 @@ a < 4
 4 ^ T
 a ^ T
 
+#####################################333
 b <- c (T, F, F, T, F, T, F); b
 c <- c(F, F, T, T, T, F, F); c
 
@@ -306,7 +309,7 @@ b || (teste > 0)
 #agora sim dá erro, já que o primeiro elemento de b é true
 # e para concluir o && precisa olhar do outro lado
 b && (teste > 0)
-
+##################################################
 x <- c(T, F, NA)
 names (x) <- c("TRUE", "FALSE", "NA"); x
 
@@ -317,5 +320,58 @@ outer (x, x, "|")
 
 !x
 outer (x, x, "==")
+#NA é "curioso"
+#NA
 NA == NA
+
+#NA
 !NA
+#############################################
+#vetores e matrizes
+a <- 1:4
+b <- 5:8
+
+c <- 3:4
+
+#vetores têm de ter tamanho igual ou o maior tem de ser múltiplo do menor
+a / b
+a / c
+
+#erro
+c(1, 2) / c(1, 2,3)
+
+a + b
+
+b <- 5:8
+c <- 3:4
+d <- 2:4
+
+b * c
+2 / d
+#matrizes
+#por padrão, de cima para baixo, da esquerda para a direita
+x <- matrix (1:4, nrow = 2, ncol = 2);x
+
+y <- matrix(10, nrow = 2, ncol = 2); y
+y - x
+
+x
+y
+#mutiplicação elemento a elemento
+x * y
+
+#multiplicação de matrizes
+#x = [1, 3]
+#x = [2, 4]
+#y = [10, 10]
+#y = [10, 10]
+
+#linha 1 de x pela coluna 1 de y
+#linha 1 de x pela coluna 2 de y
+#linha 2 de x pela coluna 1 de y
+#linha 2 de x pela coluna 2 de y
+#x %*% y = [1 * 10 + 3 * 10, 1 * 10 + 3 * 10]
+#x %*% y = [2 * 10 + 4 * 10, 2 * 10 + 3 * 10]
+
+x %*% y
+###############################
